@@ -1,0 +1,8 @@
+body {
+    background-color: black;
+    background-image: 
+        linear-gradient(skyblue 1px, transparent 1px),
+        linear-gradient(90deg, skyblue 1px, transparent 1px);
+    background-size: 150px 150px;
+    background-attachment: fixed
+}
