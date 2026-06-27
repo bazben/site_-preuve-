@@ -17,7 +17,7 @@ app.get('/epreuves', (req,res) => {
     if(!serie || !annee) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
-    const sql = 'SELECT matiere, fichier_url FROM epreuves WHERE serie = ? AND anne = ? ORDER BY matiere';
+    const sql = 'SELECT matiere, fichier_url FROM epreuves WHERE serie = ? AND annee = ? ORDER BY matiere';
     db.query(sql, [serie, annee], (err, results) => {
        if (err) {
            console.error(err);
