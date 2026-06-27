@@ -4,11 +4,12 @@ const cors = require('cors');
 const db = require('./db');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
 app.get('/epreuves', (req,res) => {
@@ -29,5 +30,5 @@ app.get('/epreuves', (req,res) => {
 //Route pour tester
 
 app.listen(PORT, () => {
-   console.log(`serveur lancé sur http://localhost:${PORT}`);
+   console.log(`serveur lancé sur le port ${PORT}`);
 });
