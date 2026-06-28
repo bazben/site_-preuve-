@@ -1,5 +1,6 @@
 
 const express = require('express');
+const path = requiere('path');
 const cors = require('cors');
 const db = require('./db');
 
@@ -9,8 +10,13 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static('public'));
-app.use('/uploads', express.static('uploads'));
+// servir le dossier public/
+app.use(express.static(path.join(__dirname, 'public')));
+
+// renvoie du index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.get('/epreuves', (req,res) => {
     const { serie, annee } = req.query;
