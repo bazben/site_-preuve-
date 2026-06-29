@@ -17,6 +17,7 @@ form.addEventListener('submit', async (e) => {
             div.innerHTML = 'Aucune épreuve trouvée!';
             return;
         }
+       div.innerHTML ='';
        data.forEach(epreuve => {
         div.innerHTML += `
         <h3>${epreuve.matiere}</h3><br>
