@@ -33,7 +33,7 @@ form.addEventListener('submit', async (e) => {
 });
 async function download(url, nom) {
     const resp = await fetch(url);
-    const blob = resp.blob();
+    const blob = await resp.blob();
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = nom;
