@@ -23,7 +23,7 @@ form.addEventListener('submit', async (e) => {
         <h3>${epreuve.matiere}</h3><br>
          <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="700px"></iframe>
         <a href="${epreuve.fichier_url}" download="${epreuve.matiere}.pdf">Télécharger ${epreuve.matiere}</a>
-         <button onclick="download($(epreuve.fichier_url), $(epreuve.matiere))">Télécharger</button>
+         <button onclick="download('${epreuve.fichier_url}', '${epreuve.matiere}')">Télécharger</button>
         
         `;
     }catch(err) {
