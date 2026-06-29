@@ -1,8 +1,36 @@
 body {
     background-color: black;
     background-image: 
-        linear-gradient(skyblue 1px, transparent 1px),
-        linear-gradient(90deg, skyblue 1px, transparent 1px);
-    background-size: 150px 150px;
+        linear-gradient(skyblue 2px, transparent 1px),
+        linear-gradient(90deg, skyblue 2px, transparent 1px);
+    background-size: 90px 90px;
     background-attachment: fixed
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: skyblue;
+    padding: 0.5rem;
+    box-shadow: 0 0 15px skyblue;
+}
+nav .ul {
+    display: flex;
+    justify-content: space-around;
+}
+nav .ul button {
+    background-color: skyblue;
+    height: 2rem;
+    width: 6rem;
+    font-family: elephant;
+    color: currentColor;
+    border: hidden;
+}
+nav .ul button:hover {
+    border: aquamarine;
+    border-radius: 0 0 50%;
+    transition: 0.3s ease-in;
+    background-color: #bdebfb;
 }
