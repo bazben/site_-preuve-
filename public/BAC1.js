@@ -20,7 +20,7 @@ form.addEventListener('submit', async (e) => {
         
         div.innerHTML = `
         <h3>${epreuve.matiere}</h3><br>
-        <iframe src="${epreuve.fichier_url}" width="100%" height="700px"></iframe>
+        <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="700px"></iframe>
         
         `;
     }catch(err) {
