@@ -11,6 +11,7 @@ form.addEventListener('submit', async (e) => {
     try {
         const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves?serie=${serie}&annee=${annee}`);
         if (!res.ok) throw new Error('errur serveur');
+
         const data = await res.json();
         if (data.length === 0) {
             div.innerHTML = 'Aucune épreuve trouvée!';
@@ -20,11 +21,23 @@ form.addEventListener('submit', async (e) => {
         
         div.innerHTML = `
         <h3>${epreuve.matiere}</h3><br>
-        <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="700px"></iframe>
+         <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="700px"></iframe>
         <a href="${epreuve.fichier_url}" download="${epreuve.matiere}.pdf">Télécharger ${epreuve.matiere}</a>
+         <button onclick="download($(epreuve.fichier_url), $(epreuve.matiere))">Télécharger</button>
+        
         `;
     }catch(err) {
         console.error(err);
         div.innerHTML = 'Erreur lors du chargement';
     }
 });
+async function download(url, nom) {
+    const resp = await fetch(url);
+    const blob = resp.blob();
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = nom;
+    link.click();
+    URL.revokeObjectURL(link.href);
+    
+}
