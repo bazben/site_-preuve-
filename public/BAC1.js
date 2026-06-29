@@ -21,7 +21,7 @@ form.addEventListener('submit', async (e) => {
         
         div.innerHTML = `
         <h3>${epreuve.matiere}</h3><br>
-         <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="700px"></iframe>
+         <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="200%"></iframe>
          <button onclick="download('${epreuve.fichier_url}', '${epreuve.matiere}')">Télécharger</button>
         
         `;
