@@ -1,6 +1,6 @@
 
 const express = require('express');
-const path = requiere('path');
+const path = require('path');
 const cors = require('cors');
 const db = require('./db');
 
