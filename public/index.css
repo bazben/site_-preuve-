@@ -39,3 +39,10 @@ h1 {
     text-align: center;
     margin-top: 10px;
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+}
