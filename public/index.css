@@ -44,5 +44,6 @@ footer {
     bottom: 0;
     width: 100%;
     left: 0;
-    z-index: 1;
+    z-index: 999;
+    backgrond-color: skyblue;
 }
