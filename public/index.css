@@ -34,3 +34,8 @@ nav .ul button:hover {
     transition: 0.3s ease-in;
     background-color: #bdebfb;
 }
+h1 {
+    color: skyblue;
+    text-align: center;
+    margin-top: 10px;
+}
