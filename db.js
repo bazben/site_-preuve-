@@ -16,7 +16,7 @@ db.connect(err => {
        console.log('erreur de connection :', err);
        return;
    } 
-    console.log('connecté à Mysql');
+    console.log('connecté à tidb');
 });
 
 module.exports = db;
