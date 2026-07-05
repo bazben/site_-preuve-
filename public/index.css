@@ -43,7 +43,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: skyblue;
+    height: 5rem;
     left: 0;
-    z-index: 999;
-    backgrond-color: skyblue;
+    z-index: 9999;
 }
