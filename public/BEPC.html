@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <style>
+         body {
+    background-color: black;
+    background-image: 
+        linear-gradient(skyblue 1px, transparent 1px),
+        linear-gradient(90deg, skyblue 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+                color: skyblue;
+}
+            form {
+                margin: 10px auto;
+                background-color: skyblue;
+                width: 20rem;
+                height: 15rem;
+                color: black;
+                text-align: center;
+                box-shadow: 0 0 20px skyblue;
+            }
+            form select {
+                width: 8rem;
+                height: 2.5rem;
+             text-align: center;
+                margin-bottom: 2rem;
+            }
+            form button {
+                width: 7rem;
+                height: 1.8rem
+            }
+        
+        </style>
+    </head>
+    <body>
+        <form id="form">
+    <h3>Choisissez une année</h3>
+    <select id="annee">
+    <option value="2023">2023</option>    
+    <option value="2024">2024</option>    
+    <option value="2025">2025</option>    
+    <option value="2026">2026</option>    
+    </select><br>
+   
+    <button style="margin: 1rem" type="submit">chercher</button>
+</form>
+        <div id="div"></div>
+<script src="BEPC.js"></script>
+    </body>
+</html>
