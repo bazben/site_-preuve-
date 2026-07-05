@@ -8,3 +8,8 @@ bac2.addEventListener('click', (e) => {
    e.preventDefault();
     window.location = "BAC2.html";
 });
+const bepc = document.getElementById("bepc");
+bepc.addEventListener('click', (e) => {
+   e.preventDefault();
+    window.location = "BEPC.html";
+});
