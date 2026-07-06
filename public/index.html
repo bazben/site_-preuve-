@@ -18,7 +18,14 @@
         <h1>BIENVEUNUE SUR BAZBEN-SITE</h1>
         <script src="index.js"></script>
          <footer>
-             <script src="https://quge5.com/88/tag.min.js" data-zone="256317" async data-cfasync="false" data-position="bottom"></script>
+             <script src="https://quge5.com/88/tag.min.js" data-zone="256317" async data-cfasync="false"></script>
+             <script>
+                 window.monetag = window.monetag || {cmd: []};
+                 monetag.cmd.push(function() {
+                     monetag.display({ zoneId: 11239936, position: 'bottom-right' });
+                     monetag.display({ zoneId: 11239937, position: 'bottom-left' });
+                 });
+             </script>
     </footer>
     </body>
 </html>
