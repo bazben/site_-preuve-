@@ -30,7 +30,7 @@ nav .ul button {
 }
 nav .ul button:hover {
     border: aquamarine;
-    border-radius: 0 0 50%;
+    border-radius: 0 0 50%;  
     transition: 0.3s ease-in;
     background-color: #bdebfb;
 }
@@ -43,8 +43,14 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: skyblue;
-    height: 5rem;
     left: 0;
     z-index: 9999;
+}
+p {
+   color: skyblue; 
+}
+mark {
+    background-color: black;
+    color: skyblue;
+    text-decoration: underline blue;
 }
