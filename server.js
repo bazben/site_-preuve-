@@ -19,7 +19,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/epreuves', (req,res) => {
-    const { serie, annee } = req.query;
+     let { serie, annee, exam } = req.query;
+    if(exam === 'BEPC'){
+        serie = '';
+    }
     if(!serie || !annee) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
