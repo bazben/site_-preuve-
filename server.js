@@ -23,12 +23,12 @@ app.get('/epreuves', (req,res) => {
     if(exam === 'BEPC'){
         serie = '';
     }
-    if(!serie || (exam !== 'BEPC' &&!annee)) {
+    if(!annee || (exam !== 'BEPC' &&!serie)) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
      let sql;
     let params;
-    if(exam === BEPC) {
+    if(exam === 'BEPC') {
         sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE annee = ? AND exam = ?';
         params = [annee, exam];
     } else {
