@@ -18,12 +18,13 @@
         <h1>BIENVEUNUE SUR BAZBEN-SITE</h1>
         <script src="index.js"></script>
          <footer>
-            <script>(function(s){
-    s.dataset.zone='11247578',
-    s.src='https://nap5k.com/tag.min.js'})([document.documentElement,
-    document.body].filter(Boolean).pop().appendChild(document.createElement('script')
-                                                                                                                                                ))
-            </script>
+           <script> src='https://nap5k.com/tag.min.js' async data-cfasync="false"</script>
+             <script>
+                 window.monetag = window.monetag || {cmd: []};
+                 monetag.cmd.push(function() {
+                    monetag.display({ zoneId: 11247578, position: 'bottom-right' }); 
+                 });
+             </script>
     </footer>
     </body>
 </html>
