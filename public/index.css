@@ -15,7 +15,10 @@ nav {
     background-color: skyblue;
     padding: 0.5rem;
     box-shadow: 0 0 15px skyblue;
-    margin-top: 5.2rem;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0
 }
 nav .ul {
     display: flex;
@@ -23,7 +26,7 @@ nav .ul {
 }
 nav .ul button {
     background-color: skyblue;
-    height: 2rem;
+    height: 2.5rem;
     width: 6rem;
     font-family: elephant;
     color: currentColor;
