@@ -12,6 +12,7 @@ form.addEventListener('submit', async (e) => {
         
         if (data.length === 0) {
             div.innerHTML = "aucune épreuve pour le moment";
+           return;
         }
         div.innerHTML ='';
         data.forEach(epreuve => {
