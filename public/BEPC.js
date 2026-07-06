@@ -8,7 +8,7 @@ form.addEventListener('submit', async (e) => {
     div.innerHTML = "loading...";
     try {
         const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves?annee=${annee}&exam=BEPC`);
-        const data = res.json();
+        const data = await res.json();
         
         if (data.length === 0) {
             div.innerHTML = "aucune épreuve pour le moment";
