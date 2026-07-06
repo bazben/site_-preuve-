@@ -23,7 +23,7 @@ app.get('/epreuves', (req,res) => {
     if(exam === 'BEPC'){
         serie = '';
     }
-    if(!annee || (exam !== 'BEPC' &&!serie)) {
+    if(!annee || (exam !== 'BEPC' && !serie)) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
      let sql;
