@@ -18,13 +18,27 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/epreuves', (req,res) => {
-     const {serie, annee} = req.query;
+app.get('/epreuves/BAC/', (req,res) => {
+     const {serie, annee, exam} = req.query;
     if(!serie || !annee) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
-   const  sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE serie = ? AND anneE = ?';
-    db.query(sql, [serie, annee], (err, results) => {
+   const  sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE serie = ? AND annee = ?, AND exam = ?';
+    db.query(sql, [serie, annee, exam], (err, results) => {
+       if (err) {
+           console.error(err);
+           return res.status(500).json({ error: 'Erreur DB' });
+       } 
+        res.json(results);
+    });
+});
+app.get('/epreuves/BEPC/', (req,res) => {
+     const  annee = req.query;
+    if(!annee) {
+        return res.status(400).json({error: 'il faut annee dans l URL'});
+    }
+   const  sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE annee = ? AND exam = ?';
+    db.query(sql, [annee, 'BEPC'], (err, results) => {
        if (err) {
            console.error(err);
            return res.status(500).json({ error: 'Erreur DB' });
