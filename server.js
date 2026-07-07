@@ -19,27 +19,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/epreuves', (req,res) => {
-     let { serie, annee, exam } = req.query;
-    if(!annee || !exam) {
-        return res.status(400).json({error: 'il faut anneee et exam dans l URL'});
+     const { serie, annee, exam } = req.query;
+    if(!serie || !annee) {
+        return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
-    if(exam === 'BEPC'){
-        serie = '';
-    } else {
-        if(!serie){
-           return res.status(404).json({error: 'serie est obligatoire pour le BAC'})
-        }
-    }
-     let sql;
-    let params;
-    if(exam === 'BEPC') {
-        sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE annee = ? AND exam = ?';
-        params = [annee, exam];
-    } else {
-     sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE serie = ? AND annee = ? AND exam = ?';
-    params = [serie, annee, exam];
-        }
-    db.query(sql, params, (err, results) => {
+   const  sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE serie = ? AND anne = ? AND exam = ?';
+    db.query(sql, [serie, annee, exam], (err, results) => {
        if (err) {
            console.error(err);
            return res.status(500).json({ error: 'Erreur DB' });
