@@ -46,8 +46,3 @@ async function download(url, nom) {
     link.click();
     URL.revokeObjectURL(link.href);
 }
-
-document.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location = "index.html";
-});
