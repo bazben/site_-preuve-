@@ -1,3 +1,8 @@
+document.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location = "index.html";
+});
+
 const form = document.getElementById('search');
 const div = document.getElementById('resultats');
 
