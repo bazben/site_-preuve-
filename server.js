@@ -19,12 +19,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/epreuves', (req,res) => {
-     const { serie, annee, exam } = req.query;
+     const { serie, annee} = req.query;
     if(!serie || !annee) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
-   const  sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE serie = ? AND anne = ? AND exam = ?';
-    db.query(sql, [serie, annee, exam], (err, results) => {
+   const  sql = 'SELECT matiere, fichier_url, exam FROM epreuves WHERE serie = ? AND anne = ?';
+    db.query(sql, [serie, annee], (err, results) => {
        if (err) {
            console.error(err);
            return res.status(500).json({ error: 'Erreur DB' });
