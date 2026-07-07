@@ -7,7 +7,7 @@ form.addEventListener('submit', async (e) => {
     
     div.innerHTML = "loading...";
     try {
-        const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves?annee=${annee}&exam=BEPC`);
+        const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves/BEPC?annee=${annee}&exam=BEPC`);
         const data = await res.json();
         
         if (data.length === 0) {
