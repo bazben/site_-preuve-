@@ -1,4 +1,4 @@
-document.addEventListener('click', (e) => {
+document.getElementById('home').addEventListener('click', (e) => {
     e.preventDefault();
     window.location = "index.html";
 });
