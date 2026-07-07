@@ -33,7 +33,7 @@ app.get('/epreuves/BAC/', (req,res) => {
     });
 });
 app.get('/epreuves/BEPC/', (req,res) => {
-     const  annee = req.query;
+     const  annee = req.query.annee;
     if(!annee) {
         return res.status(400).json({error: 'il faut annee dans l URL'});
     }
