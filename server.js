@@ -22,9 +22,13 @@ app.get('/epreuves', (req,res) => {
      let { serie, annee, exam } = req.query;
     if(exam === 'BEPC'){
         serie = '';
+    } else {
+        if(!serie){
+            res.status(404).json({error: 'serie est obligatoire pour le BAC'})
+        }
     }
-    if(!annee || (exam !== 'BEPC' && !serie)) {
-        return res.status(400).json({error: 'il faut serie et annee dans l URL'});
+    if(!annee || !exam) {
+        return res.status(400).json({error: 'il faut anneee et exam dans l URL'});
     }
      let sql;
     let params;
