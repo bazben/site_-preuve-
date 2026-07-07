@@ -1,3 +1,8 @@
+document.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location = "index.html";
+});
+
 const form = document.getElementById('search');
 const div = document.getElementById('resultats');
 
@@ -9,7 +14,7 @@ form.addEventListener('submit', async (e) => {
     div.innerHTML ='chargement...';
     
     try {
-        const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves?serie=${serie}&annee=${annee}`);
+        const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves/BAC?serie=${serie}&annee=${annee}&exam=BAC2`);
         if (!res.ok) throw new Error('errur serveur');
 
         const data = await res.json();
