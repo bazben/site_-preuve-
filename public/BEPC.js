@@ -3,7 +3,7 @@ const div = document.getElementById("div");
 
 form.addEventListener('submit', async (e) => {
    e.preventDefault();
-    const annee = document.getElementById("annee");
+    const annee = document.getElementById("annee").value;
     
     div.innerHTML = "loading...";
     try {
