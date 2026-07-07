@@ -9,7 +9,7 @@ form.addEventListener('submit', async (e) => {
     div.innerHTML ='chargement...';
     
     try {
-        const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves?serie=${serie}&annee=${annee}&exam='BAC1'`);
+        const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves?serie=${serie}&annee=${annee}&exam=BAC1`);
         if (!res.ok) throw new Error('errur serveur');
 
         const data = await res.json();
