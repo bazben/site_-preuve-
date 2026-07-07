@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/epreuves', (req,res) => {
-     const { serie, annee} = req.query;
+     const {serie, annee} = req.query;
     if(!serie || !annee) {
         return res.status(400).json({error: 'il faut serie et annee dans l URL'});
     }
