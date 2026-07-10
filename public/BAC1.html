@@ -21,15 +21,17 @@
                 border: ridge black;
             }
             form {
-                margin: 10px auto;
                 background-color: skyblue;
                 width: 20rem;
                 height: 15rem;
                 color: black;
                 text-align: center;
                 box-shadow: 0 0 20px skyblue;
-                 position: relative;
-                z-index: 9999999999;
+                position: fixed !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                z-index: 999999 !important;
             }
             form select {
                 width: 8rem;
