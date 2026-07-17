@@ -50,7 +50,11 @@
                 height: 35px;width: 90px; 
                 height: 35px;
             }
-        
+
+            .sc {
+    display: flex;
+    align-items: center;
+}
         </style>
            <script src="sw.js"></script>
     </head>
@@ -58,12 +62,18 @@
         <button id="home">🏡Home</button>
         <form id="form">
     <h3>Choisissez une année</h3>
+
+            <div class="sc">
+                <label>
+                    Année 
     <select id="annee">
     <option value="2023">2023</option>    
     <option value="2024">2024</option>    
     <option value="2025">2025</option>    
     <option value="2026">2026</option>    
-    </select><br>
+    </select>
+                    </label>
+                </div><br>
    
     <button style="margin: 1rem" type="submit">chercher</button>
 </form>
