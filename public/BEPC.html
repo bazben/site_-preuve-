@@ -54,8 +54,7 @@
             .sc {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
+    align-items: center;
 }
         </style>
            <script src="sw.js"></script>
@@ -66,15 +65,13 @@
     <h3>Choisissez une année</h3>
 
             <div class="sc">
-                <label>
-                    Année 
+                <label for="annee">Année</label> 
     <select id="annee">
     <option value="2023">2023</option>    
     <option value="2024">2024</option>    
     <option value="2025">2025</option>    
     <option value="2026">2026</option>    
     </select>
-                    </label>
                 </div><br>
    
     <button style="margin: 1rem" type="submit">chercher</button>
