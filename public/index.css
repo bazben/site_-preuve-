@@ -11,6 +11,16 @@ body {
     padding: 0;
 }
 
+.nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0; 
+}
+.nav p a {
+    text-decoration: none;
+}
+
 nav {
     background-color: skyblue;
     padding: 0.5rem;
