@@ -10,20 +10,21 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .nav {
     position: fixed;
     right: 0;
     left: 0;
     bottom: 0; 
 }
+.nav p a {
+    text-decoration: none;
+}
+
 nav {
     background-color: skyblue;
     padding: 0.5rem;
-    box-shadow: 0 0 15px skyblue;
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0
+    box-shadow: 0 0 15px skyblue
 }
 nav .ul {
     display: flex;
