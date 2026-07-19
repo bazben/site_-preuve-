@@ -77,9 +77,9 @@ footer {
 }
 p {
    color: skyblue; 
+    background-color: black;
 }
 mark {
     background-color: black;
     color: skyblue;
-    text-decoration: underline blue;
 }
