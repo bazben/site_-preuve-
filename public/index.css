@@ -17,9 +17,6 @@ body {
     left: 0;
     bottom: 0; 
 }
-.nav p a {
-    text-decoration: none;
-}
 
 nav {
     background-color: skyblue;
