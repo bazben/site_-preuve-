@@ -21,6 +21,25 @@ body {
     text-decoration: none;
 }
 
+.nav p .what {
+    color: white;
+    background-color: green;
+    border-radius: 50%;
+    border: double;
+}
+.nav p .what:hover {
+    border: inset;
+}
+
+.nav p .mail {
+    color: black;
+    background-color: white;
+    border: double;
+}
+.nav p .mail:hover {
+    border: groove;
+}
+
 nav {
     background-color: skyblue;
     padding: 0.5rem;
