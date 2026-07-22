@@ -23,6 +23,11 @@
             </div>
        
         <script src="index.js"></script>
+        v<script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+        </script>
          <footer>
    
     </footer>
