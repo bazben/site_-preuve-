@@ -3,6 +3,7 @@
   "short_name": "bazben",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait"
   "background_color": "#06404b",
   "theme_color": "#173333",
   "icons": [
