@@ -68,7 +68,7 @@ app.post('/register', async (req, res) => {
             
             const hashpass = await bcrypt.hash(password, 10);
             
-            const sql = 'INSERT INTO users (nom, prenom, email, password, serie, examen) VALUES';
+           const sql = `INSERT INTO users (nom, prenom, email, password, serie, examen) VALUES (?,?,?,?,?,?)`;
             db.query(sql, [nom, prenom, email, hashpass, serie, examen], (Err, re) => {
                 if (Err) return res.status(500).json({err: "erreur lors de la création"});
             
