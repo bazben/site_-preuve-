@@ -1,8 +1,23 @@
-const form = document.getElementById('form');
+const registerform = document.getElementById('registerform');
+const loginform = document.getElementById('loginform');
+const chregister = document.getElementById('chregister');
+const chlogin = document.getElementById('chlogin');
 const message = document.getElementById('message');
 const exam = document.getElementById('examen');
 const ccn = document.getElementById('ccn');
-const serie = document.getElementById('serie');
+ const serie = document.getElementById('serie');
+
+chregister.addEventListener('click', e => {
+   e.preventDefault();
+    loginform.style.display = 'grid';
+    registerform.style.display = 'none';
+});
+
+chlogin.addEventListener('click', e => {
+   e.preventDefault();
+    loginform.style.display = 'none';
+    registerform.style.display = 'grid';
+});
 
 examen.addEventListener('change', () => {
    if (exam.value !== 'BEPC') {
@@ -13,7 +28,7 @@ examen.addEventListener('change', () => {
    }
 });
 
-form.addEventListener('submit', async (e) => {
+registerform.addEventListener('submit', async (e) => {
     e.preventDefault();
     const nom =  document.getElementById('nom');
     const prenom = document.getElementById('prenom');
@@ -96,9 +111,9 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-form.addEventListener('keydown', e => {
+registerform.addEventListener('keydown', e => {
    if (e.key === 'enter') {
        e.preventDefault();
-       form.requestSubmit();
+       registerform.requestSubmit();
    } 
 });
