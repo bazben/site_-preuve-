@@ -2,12 +2,14 @@ const form = document.getElementById('form');
 const message = document.getElementById('message');
 const exam = document.getElementById('examen');
 const ccn = document.getElementById('ccn');
+const serie = document.getElementById('serie');
 
 examen.addEventListener('change', () => {
    if (exam.value !== 'BEPC') {
        ccn.style.display = 'grid'; 
    } else {
        ccn.style.display = 'none';
+       serie.value = '';
    }
 });
 
@@ -44,8 +46,8 @@ form.addEventListener('submit', async (e) => {
        prenom: prenom.value.trim(),
        email: email.value.trim(),
        password: password.value.trim(),
-       examen: exam.value.trim(),
-       serie: document.getElementById('serie').value.trim(),
+       examen: exam.value,
+       serie: serie.value,
       confpassword: confpassword.value.trim()
    };
     message.innerText = "Loading...";
