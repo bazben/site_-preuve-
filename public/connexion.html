@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="connexion.css">
+    </head>
+    <body>
+    <form id="form" style="display: grid; width: 17rem; margin: 10px auto;">
+        <h2>Inscription</h2>
+        <label for="name">Nom</label>
+        <input type="text" id="nom" placeholder="Entrez votre nom">
+        <label for="prenom">prenom</label>
+        <input type="text" id="prenom" placeholder="Entrez votre prenom">
+        <label for="email">email</label>
+        <input type="email" id="email" placeholder="Entrez votre email">
+        <label for="password">password</label>
+        <input type="password" id="password" placeholder="Entrez votre mot de pass">
+        <label for="examen">choisissez votre examen</label>
+        <select id="examen">
+        <option value="BEPC">BEPC</option>
+        <option value="BAC1">BAC1</option>
+        <option value="BAC2">BAC2</option>
+        </select>
+        <div id="ccn" style="display: none">
+            <label for="serie">Choisissez votre serie</label>
+        <select id="serie">
+        <option value="A4">A4</option>
+        <option value="D">D</option>
+        <option value="f1">F1</option>
+        <option value="f2">F2</option>
+        <option value="f3">F3</option>
+        <option value="f4">F4</option>
+        </select>
+        </div>
+        <p id="message"></p>
+        <button type="submit">S'inscire</button>
+    </form>
+        <script src="connexion.js"></script>
+    </body>
+</html>
