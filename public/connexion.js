@@ -17,21 +17,22 @@ form.addEventListener('submit', async (e) => {
     const prenom = document.getElementById('prenom');
     const email = document.getElementById('email');
     const password = document.getElementById('password');
+   const confpassword = document.getElementById('confpassword');
     
-    [nom, prenom, password, email].forEach(input => {
+    [nom, prenom, password, email, confpassword].forEach(input => {
        input.addEventListener('input', () => {
           input.style.border = '1px solid #ccc';
            input.style.backgroundColor = 'white';
        });
     });
     
-   [nom, prenom, password, email].forEach(tt => {
+   [nom, prenom, password, email, confpassword].forEach(tt => {
        if (!tt.value.trim()) {
            tt.style.border = 'double red';
        }
        
    });
-    if (!nom.value.trim() || !prenom.value.trim() || !email.value.trim() || !password.value.trim()) {
+     if (!nom.value.trim() || !prenom.value.trim() || !email.value.trim() || !password.value.trim() || !confpassword.value.trim()) {
         message.style.color = 'red';
         message.innerText = 'remplissez le champ vide';
         message.style.backgroundColor = 'black';
@@ -44,7 +45,8 @@ form.addEventListener('submit', async (e) => {
        email: email.value.trim(),
        password: password.value.trim(),
        examen: exam.value.trim(),
-       serie: document.getElementById('serie').value.trim()
+       serie: document.getElementById('serie').value.trim(),
+      confpassword: confpassword.value.trim()
    };
     message.innerText = "Loading...";
     message.style.color = 'black';
