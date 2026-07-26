@@ -58,7 +58,7 @@ app.post('/register', async (req, res) => {
         return res.status(400).json({erreur: "les mots de pass ne correspondent pas"});
     }
     try{
-        db.query('SELECT * FROM users WHERE email =?', [email], (err, resultats) => {
+        db.query('SELECT * FROM users WHERE email =?', [email], async (err, resultats) => {
            if (err) {
                return res.status(500).json({erreur: "Erreur serveur"});
            } 
