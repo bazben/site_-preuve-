@@ -113,6 +113,7 @@ app.post('/Loging', async (req, res) => {
            message: "connexion réussie",
             token: token
         });
+        console.log("connexion réussie");
     });
 });
 
