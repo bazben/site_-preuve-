@@ -64,7 +64,7 @@ form.addEventListener('submit', async (e) => {
             message.innerText = 'connexion réussie! Token: ' + results.token.substring(0,20) + '...';
         }else {
             message.style.color = 'red';
-            message.innerText = 'Erreur: ' + (results.message || results.error || 'Une erreur est survenue');
+            message.innerText = 'Erreur: ' + (results.message || results.erreur || 'Une erreur est survenue');
         }
     }catch(err) {
         message.style.color = 'red';
