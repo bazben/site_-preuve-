@@ -66,6 +66,25 @@ form.addEventListener('submit', async (e) => {
         if(res.ok) {
             message.style.color = 'green';
             message.innerText = 'connexion réussie! Token: ' + results.token.substring(0,20) + '...';
+            const copy = document.createElement('button');
+            copy.type = 'button';
+            message.appendChild(copy);
+            const petit = document.createElement('span');
+            message.appendChild(petit);
+            copy.innerText = "copier";
+            copy.addEventListener('click', async (e) => {
+                e.preventDefault();
+               try {
+                   await navigator.clipboard.writeText(results.token); 
+                   petit.innerText = 'copié';
+                   petit.style.color = 'green';
+                   setTimeout(() => {petit.innerText = '';}, 2000);
+               } catch (err) {
+                petit.innerText = 'non copié';
+                   petit.style.color = 'red';
+               }
+                
+            });
         }else {
             message.style.color = 'red';
             message.innerText = 'Erreur: ' + (results.message || results.erreur || 'Une erreur est survenue');
