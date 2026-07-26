@@ -74,6 +74,7 @@ app.post('/register', async (req, res) => {
             
             const token = jwt.sign(
             {id: re.insertId, email: email},
+                process.env.JWT_SECRET,
                 {expiresIn: '90d'}
             );
             
@@ -107,6 +108,7 @@ app.post('/Loging', async (req, res) => {
         }
         const token = jwt.sign(
         {id: user.id, email: email},
+            process.env.JWT_SECRET,
         {expiresIn: '90d'}
         );
         res.json({
