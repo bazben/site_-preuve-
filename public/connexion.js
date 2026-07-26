@@ -47,7 +47,7 @@ form.addEventListener('submit', async (e) => {
        email: email.value.trim(),
        password: password.value.trim(),
        examen: exam.value,
-       serie: serie.value,
+      serie: exam.value === 'BEPC' ? null : serie.value,
       confpassword: confpassword.value.trim()
    };
     message.innerText = "Loading...";
