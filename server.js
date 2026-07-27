@@ -80,10 +80,18 @@ app.post('/register', async (req, res) => {
                 {expiresIn: '90d'}
             );
             
+           res.cookie('token', token, {
+                   httpOnly: true,
+                    secure: true,
+                    sameSite: 'Lax',
+                    maxAge: 90 * 24 * 60 * 60 * 1000
+                });
+            
             res.status(201).json({
                 message: "compte créé avec succès",
-                token: token
+                user: {nom, prenom}
             });
+                console.log("connexion réussie");
             });
         });
     }catch(err) {
@@ -121,7 +129,25 @@ app.post('/Loging', async (req, res) => {
     });
 });
 
-//Route pour tester
+app.get('/me', (req,res) => {
+   const token = req.cookies.token;
+    if(!token) return res.status(401).json({error: "Non connecté"});
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+       if(err) {
+           res.status(401).json({error: "Token invalide"});
+           const sql = 'SELECT id, nom, prenom, email FROM users WHERE id =?';
+           db.query(sql, [decoded.id], (err, result) => {
+              if (err || result.length === 0) return res.status(401).json({error: 'user introuvable'});
+               res.json({user: result[0]});
+           });
+       } 
+    });
+});
+
+app.post('/logout', (req, res) => {
+   res.clearCookie('token');
+    res.json({message: "Déconnecté"});
+});
 
 app.listen(PORT, () => {
    console.log(`serveur lancé sur le port ${PORT}`);
