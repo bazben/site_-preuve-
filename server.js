@@ -70,7 +70,7 @@ app.post('/register', async (req, res) => {
             
            const sql = `INSERT INTO users (nom, prenom, email, password, serie, examen) VALUES (?,?,?,?,?,?)`;
             db.query(sql, [nom, prenom, email, hashpass, serie, examen], (Err, re) => {
-                if (Err) return res.status(500).json({err: "erreur lors de la création"});
+                if (Err) return res.status(500).json({erreur: "erreur lors de la création"});
             
             const token = jwt.sign(
             {id: re.insertId, email: email},
@@ -92,19 +92,19 @@ app.post('/register', async (req, res) => {
 app.post('/Loging', async (req, res) => {
    const { email, password } = req.body;
     if(!email || !password) {
-        res.status(400).json({err: "email et ,ot de pass obligatoires"});
+        res.status(400).json({erreur: "email et ,ot de pass obligatoires"});
     }
     
     db.query('SELECT * FROM users WHERE email =?', [email], async (err, results) => {
        if(err) return res.status(500).json({erreur: "Erreur serveur"});
         if(results.length === 0) {
-            return res.status(401).json({error: "email incorrect"});
+            return res.status(401).json({erreur: "email incorrect"});
         }
          const user = results[0];
         
         const okk = await bcrypt.compare(password, user.password);
         if(!okk) {
-            return res.status(401).json({err: "mot de pass incorrect"});
+            return res.status(401).json({erreur: "mot de pass incorrect"});
         }
         const token = jwt.sign(
         {id: user.id, email: email},
