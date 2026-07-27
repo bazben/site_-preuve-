@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const data = await res.json();
         const user = data.user;
-        
+        console.log("user: ", user);
         auth.innerHTML = `
         <div class="menu">
             <div class="vid"></div>
