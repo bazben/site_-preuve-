@@ -5,12 +5,14 @@ const cors = require('cors');
 const db = require('./db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cookieparser = require('cookie-parser');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieparser());
 
 // servir le dossier public/
 app.use(express.static(path.join(__dirname, 'public')));
