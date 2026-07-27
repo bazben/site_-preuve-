@@ -1,0 +1,26 @@
+.vid {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+    box-shadow: 0 0 20px gray;
+}
+
+#auth {
+    position: fixed;
+    right: 1px;
+    margin-bottom: 5px
+}
+.lie {
+    text-decoration: none;
+    text-align: center;
+    color: skyblue;
+    position: relative;
+}
+.s {
+    position: relative;
+   right: 15px;
+     background-color: black;
+    box-shadow: 0 0 100px skyblue;
+    filter: drop-shadow(0 0 10px);
+}
