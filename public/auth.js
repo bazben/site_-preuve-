@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
         document.getElementById('logout').addEventListener('click', async (e) => {
         e.preventDefault();
-            await fetch('https://bazben-site-preuve.onrender.com/', {
+            await fetch('https://bazben-site-preuve.onrender.com/logout', {
                method: 'POST',
-                credentials: 'includ'
+                credentials: 'include'
             });
         });
     }catch(err) {
