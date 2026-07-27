@@ -81,7 +81,7 @@ registerform.addEventListener('submit', async (e) => {
         if(res.ok) {
             message.style.color = 'green';
             message.innerText = `connexion réussie!  Bienvenue ${results.user.nom} ${results.user.prenom}`;
-         setTimeout(() => {window.location = `${serie}.html`;}, 2000);
+         setTimeout(() => {window.location = `${exam.value}.html`;}, 2000);
         }else {
             message.style.color = 'red';
             message.innerText = 'Erreur: ' + (results.message || results.erreur || 'Une erreur est survenue');
