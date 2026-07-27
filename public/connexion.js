@@ -117,3 +117,42 @@ registerform.addEventListener('keydown', e => {
        registerform.requestSubmit();
    } 
 });
+
+
+
+// PASSAGE A LA ROUTE LOGIN
+
+loginform.addEventListener('submit', async (el) => {
+   el.preventDefault();
+    const email = document.getElementById('logmail').value;
+    const password = document.getElementById('logpassword').value;
+    const message = document.getElementById('logmessage');
+    
+    message.style.color = 'white';
+    message.innerText = 'loading...';
+    
+    try {
+        const resp = await fetch('https://bazben-site-preuve.onrender.com/Loging', {
+           method: 'POST',
+            headers: {
+              'content-Type': 'application/json'  
+            },
+            body: JSON.stringify({ email, password })
+        });
+        const results = await resp.json();
+        console.log("REPONSE SERVEUR: ", results);
+        
+        if(resp.ok) {
+            message.style.color = 'green';
+            message.innerText = 'Connexion réussie' + results.token.substring(0,15);
+        }else {
+            message.style.color = 'red';
+            message.innerText = (results.message || results.erreur || 'Une erreur est survenue');
+        }
+        
+    }catch(err) {
+        message.style.color = 'red';
+        message.innerText = 'Erreur lors de la connexin';
+        console.log(err);
+    }
+});
