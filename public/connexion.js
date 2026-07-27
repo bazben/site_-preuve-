@@ -16,12 +16,12 @@ chregister.addEventListener('click', e => {
 chlogin.addEventListener('click', e => {
    e.preventDefault();
     loginform.style.display = 'none';
-    registerform.style.display = 'grid';
+    registerform.style.display = 'flex';
 });
 
 examen.addEventListener('change', () => {
    if (exam.value !== 'BEPC') {
-       ccn.style.display = 'grid'; 
+       ccn.style.display = 'flex'; 
    } else {
        ccn.style.display = 'none';
        serie.value = '';
