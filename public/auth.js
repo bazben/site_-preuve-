@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
        location.reload();
         });
-});
+
        
     }catch(err) {
         auth.innerHTML = `
@@ -41,4 +41,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         </a>
         `;
     }
-   
+  }); 
