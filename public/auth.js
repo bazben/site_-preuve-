@@ -38,5 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                method: 'POST',
                 credentials: 'include'
             });
+       location.reload();
         });
 });
