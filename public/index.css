@@ -4,7 +4,8 @@ body {
         linear-gradient(skyblue 2px, transparent 1px),
         linear-gradient(90deg, skyblue 2px, transparent 1px);
     background-size: 90px 90px;
-    background-attachment: fixed
+    background-attachment: fixed;
+    color: skyblue;
 }
 * {
     margin: 0;
