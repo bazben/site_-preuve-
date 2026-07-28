@@ -21,6 +21,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
         `;
        
+        document.getElementById('logout').addEventListener('click', async (e) => {
+        e.preventDefault();
+            await fetch('https://bazben-site-preuve.onrender.com/logout', {
+               method: 'POST',
+                credentials: 'include'
+            });
+       location.reload();
+        });
+});
        
     }catch(err) {
         auth.innerHTML = `
@@ -32,12 +41,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         </a>
         `;
     }
-    document.getElementById('logout').addEventListener('click', async (e) => {
-        e.preventDefault();
-            await fetch('https://bazben-site-preuve.onrender.com/logout', {
-               method: 'POST',
-                credentials: 'include'
-            });
-       location.reload();
-        });
-});
+   
