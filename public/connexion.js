@@ -126,7 +126,8 @@ loginform.addEventListener('submit', async (el) => {
         
         if(resp.ok) {
             message.style.color = 'green';
-            message.innerText = 'Connexion réussie' + results.token.substring(0,15);
+            message.innerText = `connexion réussie!  Bienvenue ${results.user.nom} ${results.user.prenom}`;
+            setTimeout(() => {window.location = `${results.user.exam}.html`;}, 2000);
         }else {
             message.style.color = 'red';
             message.innerText = (results.message || results.erreur || 'Une erreur est survenue');
