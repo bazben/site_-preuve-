@@ -24,11 +24,12 @@ document.addEventListener('DOMContentLoaded', async () => {
        
     }catch(err) {
         auth.innerHTML = `
-        <div class="menu">
+        <a href="connexion.html">
+         <div class="menu">
             <div class="vid"></div>
-        <span class="s"></span>
-            <button id="logout">Déconnexion</button>
+        <span class="s">Se connecter</span>
         </div>
+        </a>
         `;
     }
     document.getElementById('logout').addEventListener('click', async (e) => {
