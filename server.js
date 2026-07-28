@@ -130,7 +130,7 @@ app.post('/Loging', async (req, res) => {
             
             res.status(201).json({
                 message: "connexion réussie",
-               user: {nom: user.nom, prenom: user.prenom, exam: user.exam}
+               user: {nom: user.nom, prenom: user.prenom, exam: user.examen}
             });
                 console.log("connexion réussie");
             });
