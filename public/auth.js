@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         if(!res.ok) throw new Error("Non connecté");
 
-       if(res.ok) {
+       
         const data = await res.json();
         const user = data.user;
         console.log("user: ", user);
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <button id="logout">Déconnexion</button>
         </div>
         `;
-       }
+       
        
     }catch(err) {
         auth.innerHTML = `
