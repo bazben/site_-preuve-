@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         
         if(!res.ok) throw new Error("Non connecté");
-        
+
+       if(res.ok) {
         const data = await res.json();
         const user = data.user;
         console.log("user: ", user);
@@ -19,13 +20,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             <button id="logout">Déconnexion</button>
         </div>
         `;
-        document.getElementById('logout').addEventListener('click', async (e) => {
-        e.preventDefault();
-            await fetch('https://bazben-site-preuve.onrender.com/logout', {
-               method: 'POST',
-                credentials: 'include'
-            });
-        });
+       }
+       
     }catch(err) {
         auth.innerHTML = `
         <div class="menu">
@@ -35,4 +31,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
         `;
     }
+    document.getElementById('logout').addEventListener('click', async (e) => {
+        e.preventDefault();
+            await fetch('https://bazben-site-preuve.onrender.com/logout', {
+               method: 'POST',
+                credentials: 'include'
+            });
+        });
 });
