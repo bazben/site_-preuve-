@@ -1,14 +1,23 @@
+* {
+   cursor: none;
+}
+
 body {
-   background-color: black;
+   background: linear-gradient(#f8c5e9, blue);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   text-shadow: 0 0 10px blue;
+   cursor: none;
 }
 
 form {
    box-shadow: 0 0 10px blue;
-   background-color: black;
-   color: blue;
+   color: skyblue;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   background: linear-gradient(blue, #f8c5e9);
+   cursor: none;
 }
 
 p {
@@ -16,14 +25,20 @@ p {
 }
 input {
    width: 15rem;
+   border-radius: 10px;
+   background-color: #f8c5e9;
 }
 button {
    width: 8rem;
+   background-color: #f8c5e9;
+   border-radius:  10px;
 }
 #examen {
    position: relative;
    align-self: flex-start;
-   margin-left: 1rem
+   margin-left: 1rem;
+    background-color: #f8c5e9;
+   border-radius:  10px;
 }
 #serie {
    position: relative;
@@ -38,4 +53,37 @@ label {
 }
 a {
    color: skyblue;
+}
+
+#ig {
+   position: fixed;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   pointer-events: none;
+   transition: 0.1s ease-out;
+   box-shadow: 0 0 19px 13px #a9a4a4;
+   z-index: 9999;
+}
+.trail {
+   position: fixed;
+   background: radial-gradient(circle, #a9a4a4 0%, transparent 70%);
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   pointer-events: none;
+   transition: fadout 0.6s forwards;
+   z-index: 9998
+   
+}
+
+@keyframes fadout {
+   0% {
+      transform: scale(0.5);
+      opacity: 0.6;
+   }
+   100% {
+      transform: scale(2);
+      opacity: 0;
+   }
 }
