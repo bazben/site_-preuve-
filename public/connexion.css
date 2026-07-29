@@ -21,17 +21,27 @@ form {
 }
 
 p {
-   background-color: black;
+   color: black;
 }
 input {
    width: 15rem;
    border-radius: 10px;
    background-color: #f8c5e9;
 }
+input:hover{
+   transform: scale(1.03);
+   background-color: #d199ec; 
+}
 button {
-   width: 8rem;
+   width: 6rem;
+   height: 1.5rem;
    background-color: #f8c5e9;
    border-radius:  10px;
+}
+button:hover {
+   border-radius: 0 0 10px;
+   transform: scale(1.1);
+   background-color: #d199ec;
 }
 #examen {
    position: relative;
@@ -41,9 +51,14 @@ button {
    border-radius:  10px;
 }
 #serie {
+   background-color: #f8c5e9;
    position: relative;
    align-self: flex-end;
    margin-right: 1rem;
+}
+#examen:hover,#serie:hover {
+    transform: scale(1.03);
+   background-color: #d199ec; 
 }
 label {
    position: relative;
