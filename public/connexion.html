@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Title</title>
         <link rel="stylesheet" href="connexion.css">
     </head>
@@ -40,8 +39,7 @@
         <button type="submit">S'inscire</button>
         <p>Avez vous déjà un compte? <a href="#" id="chregister">Connectez-vous</a></p>
     </form>
-
-         <form id="loginform" style="display: none; width: 17rem; margin: 10px auto;">
+        <form id="loginform" style="display: none; width: 17rem; margin: 10px auto;">
         <h2>connexion</h2>
             <label for="logmail">Email</label>
             <input type="email" id="logmail" placeholder="Entrez votre mail" required>
@@ -52,5 +50,25 @@
             <p>Pas de compte?<a href="#" id="chlogin">Inscrivez-vous</a></p>
         </form>
         <script src="connexion.js"></script>
+        <img src="img.jpg" id="ig">
+        <script>
+        const ig = document.getElementById('ig');
+
+document.addEventListener('mousemove', (e) => {
+    ig.style.left = e.clientX - 15 + 'px';
+    ig.style.top = e.clientY - 15 + 'px';
+    
+    const trail = document.createElement('div');
+    
+    trail.className = 'trail';
+    trail.style.left = e.clientX - 20 + 'px';
+    trail.style.top = e.clientY - 20 + 'px';
+    document.body.appendChild(trail);
+    
+    setTimeout(() => {trail.remove()}, 300);
+});
+        </script>
+       
+    
     </body>
 </html>
