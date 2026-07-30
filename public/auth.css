@@ -9,7 +9,8 @@
 #auth {
     position: fixed;
     right: 1px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    z-index: 999;
 }
 .lie {
     text-decoration: none;
@@ -24,4 +25,19 @@
     box-shadow: 0 0 100px skyblue;
     filter: drop-shadow(0 0 10px);
     color: skyblue;
+}
+#cont {
+    background: linear-gradient(blue, #f8c5e9);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+#cont {
+    position: fixed;
+    top: 48px;
+    right: 0;
+    width: 12rem;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 3px blue;
+    padding: 15px
 }
