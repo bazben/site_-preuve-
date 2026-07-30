@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         </a>
          <div id="cont">
         <div class="vid"></div>
-        <P class ="inf">Nom:</P>
-        <P class="inf">Prenom:</P>
-        <P class="inf">Email:</P>
-        <P class="inf">Dte_cretion:</P>
+        <P class ="inf">Nom: ${data.user.nom}</P>
+        <P class="inf">Prenom: ${data.user.prenom}</P>
+        <P class="inf">Email: ${data.user.email}</P>
+        <P class="inf">Dte_cretion: ${data.user.date}</P>
         <button id="logout">Déconnexion</button>
         </div>
         `;
