@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
         `;
         const cont = document.getElementById('cont');
-        document.getElementById('menu').addEventListener('click', () => {
+        document.getElementById('menu').addEventListener('click', (e) => {
+            e.stopPropagation();
             cont.style.display = 'flex';
         });
         document.addEventListener('click', () => {
