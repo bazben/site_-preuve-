@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('menu').addEventListener('click', () => {
             cont.style.display = 'flex';
         });
+        document.addEventListener('click', () => {
+            cont.style.display = 'none';
+        });
         document.getElementById('logout').addEventListener('click', async (e) => {
         e.preventDefault();
             await fetch('https://bazben-site-preuve.onrender.com/', {
