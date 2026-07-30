@@ -89,7 +89,7 @@ app.post('/register', async (req, res) => {
             
             res.status(201).json({
                 message: "compte créé avec succès",
-                user: {nom, prenom}
+                 user: {nom, prenom, email}
             });
                 console.log("connexion réussie");
             });
@@ -130,7 +130,7 @@ app.post('/Loging', async (req, res) => {
             
             res.status(201).json({
                 message: "connexion réussie",
-               user: {nom: user.nom, prenom: user.prenom, exam: user.examen}
+              user: {nom: user.nom, prenom: user.prenom, exam: user.exam, email: user.email, date: user.creea}
             });
                 console.log("connexion réussie");
             });
