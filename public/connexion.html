@@ -50,11 +50,12 @@
             <p>Pas de compte?<a href="#" id="chlogin">Inscrivez-vous</a></p>
         </form>
         <script src="connexion.js"></script>
-        <img src="img.jpg" id="ig">
+         <img src="ok.png" id="ig" style="display: none">
         <script>
         const ig = document.getElementById('ig');
 
 document.addEventListener('mousemove', (e) => {
+    ig.style.display = 'flex';
     ig.style.left = e.clientX - 15 + 'px';
     ig.style.top = e.clientY - 15 + 'px';
     
