@@ -21,14 +21,9 @@ body {
     text-decoration: none;
 }
 
-.nav p .what {
-    color: white;
-    background-color: green;
-    border-radius: 50%;
-    border: double;
-}
+
 .nav p .what:hover {
-    border: inset;
+    filter: drop-shadow(0 0 10px green);
 }
 
 .nav p .mail {
