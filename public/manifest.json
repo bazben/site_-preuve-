@@ -19,5 +19,19 @@
     }
   ],
   "id": "bazben-app",
-  "description": "Cette application permet un accès gratuit aux épreuves d'examen"
+  "description": "Cette application permet un accès gratuit aux épreuves d'examen",
+  "screenshoots": [
+ {
+  "src": "s1.png",
+    "type": "image/png"
+},
+{
+  "src": "s2.png",
+    "type": "image/png"
+},
+{
+  "src": "s3.png",
+    "type": "image/png"
+}
+]
 }
