@@ -23,14 +23,17 @@
   "screenshoots": [
  {
   "src": "s1.png",
+    "sizes": "480x960",
     "type": "image/png"
 },
 {
   "src": "s2.png",
+   "sizes": "480x960",
     "type": "image/png"
 },
 {
   "src": "s3.png",
+   "sizes": "480x960",
     "type": "image/png"
 }
 ]
