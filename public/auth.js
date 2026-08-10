@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
             await fetch('https://bazben-site-preuve.onrender.com/logout', {
                method: 'POST',
-                credentials: 'includ'
+                credentials: 'include'
             });
             location.reload();
         });
