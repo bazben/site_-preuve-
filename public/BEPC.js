@@ -5,20 +5,23 @@ document.getElementById('home').addEventListener('click', (e) => {
 
 const form = document.getElementById("form");
 const div = document.getElementById("div");
+const loader = document.getElementById('hamster');
 
 form.addEventListener('submit', async (e) => {
    e.preventDefault();
     const annee = document.getElementById("annee").value;
     
-    div.innerHTML = "loading...";
+    loader.style.display = 'flex';
     try {
         const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves/BEPC?annee=${annee}&exam=BEPC`);
         const data = await res.json();
         
         if (data.length === 0) {
+            loader.style.display = 'none';
             div.innerHTML = "aucune épreuve pour le moment";
            return;
         }
+        loader.style.display = 'none';
         div.innerHTML ='';
         data.forEach(epreuve => {
             div.innerHTML += `
@@ -28,6 +31,7 @@ form.addEventListener('submit', async (e) => {
         `;
         });
     }catch(err) {
+        loader.style.display = 'none';
         console.log("voici l'erreur : ", err);
         div.innerHTML = "Erreur lors du chargement";
     }
