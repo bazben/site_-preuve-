@@ -5,23 +5,29 @@ document.getElementById('home').addEventListener('click', (e) => {
 
 const form = document.getElementById('search');
 const div = document.getElementById('resultats');
+const loader = document.getElementById('hamster');
 
 form.addEventListener('submit', async (e) => {
    e.preventDefault() ;
     const serie = document.getElementById('serie').value;
     const annee = document.getElementById('annee').value;
     
-    div.innerHTML ='chargement...';
+    loader.style.display = 'flex';
     
     try {
         const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves/BAC?serie=${serie}&annee=${annee}&exam=BAC2`);
-        if (!res.ok) throw new Error('errur serveur');
+        if (!res.ok) {
+            loader.style.display = 'none';
+            throw new Error('errur serveur');
+        }
 
         const data = await res.json();
         if (data.length === 0) {
+            loader.style.display = 'none';
             div.innerHTML = 'Aucune épreuve trouvée!';
             return;
         }
+        loader.style.display = 'none';
        div.innerHTML ='';
         data.forEach(epreuve => {
         div.innerHTML += `
@@ -32,6 +38,7 @@ form.addEventListener('submit', async (e) => {
         `;
             });
     }catch(err) {
+        loader.style.display = 'none';
         console.error(err);
         div.innerHTML = 'Erreur lors du chargement';
     }
