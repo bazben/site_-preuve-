@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
         </a>
          <div id="cont">
-        <div class="vid"></div>
+        <img src="${data.user.img_url}" alt="Photo de profil" id="img">
         <P class ="inf">Nom: ${data.user.nom}</P>
         <P class="inf">Prenom: ${data.user.prenom}</P>
         <P class="inf">Email: ${data.user.email}</P>
