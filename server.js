@@ -87,10 +87,12 @@ app.post('/register', async (req, res) => {
                     maxAge: 90 * 24 * 60 * 60 * 1000
                 });
             
-            res.status(201).json({
+           db.query('SELECT * FROM users WHERE email =?', [email], async (err, resp) => {
+                    res.status(201).json({
                 message: "compte créé avec succès",
-                 user: {nom, prenom, email}
+                user: {nom, prenom, email, date: resp.creea}
             });
+                });
                 console.log("connexion réussie");
             });
         });
