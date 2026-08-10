@@ -143,7 +143,7 @@ app.get('/me', (req,res) => {
     if(!token) return res.status(401).json({error: "Non connecté"});
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
        if(err) return res.status(401).json({error: "Token invalide"});
-           const sql = 'SELECT id, nom, prenom, email FROM users WHERE id =?';
+           const sql = 'SELECT id, nom, prenom, email, creea FROM users WHERE id =?';
            db.query(sql, [decoded.id], (err, result) => {
               if (err || result.length === 0) return res.status(401).json({error: 'user introuvable'});
                res.json({user: result[0]});
