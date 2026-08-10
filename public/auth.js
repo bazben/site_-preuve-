@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         auth.innerHTML = `
         <a href="connexion.html">
          <div class="menu">
-            <div class="vid"></div>
+            <img src="${data.user.img_url}" alt="Photo de profil" id="img">
         <span class="s">Se connecter</span>
         </div>
         </a>
