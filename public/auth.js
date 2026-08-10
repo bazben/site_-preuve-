@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <P class ="inf">Nom: ${data.user.nom}</P>
         <P class="inf">Prenom: ${data.user.prenom}</P>
         <P class="inf">Email: ${data.user.email}</P>
-        <P class="inf">Dte_cretion: ${data.user.date}</P>
+        <P class="inf">Dte_cretion: ${data.user.creea}</P>
         <button id="logout">Déconnexion</button>
         </div>
         `;
