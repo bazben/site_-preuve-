@@ -41,6 +41,11 @@
     box-shadow: 0 0 15px 3px blue;
     padding: 15px
 }
+#img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 
 
 
