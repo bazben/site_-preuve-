@@ -122,12 +122,12 @@ loginform.addEventListener('submit', async (el) => {
             body: JSON.stringify({ email, password })
         });
         const results = await resp.json();
-        console.log("REPONSE SERVEUR: ", results);
+        console.log("REPONSE SERVEUR: ", results, results.user.exam);
         
         if(resp.ok) {
             message.style.color = 'green';
             message.innerText = `connexion réussie!  Bienvenue ${results.user.nom} ${results.user.prenom}`;
-            setTimeout(() => {window.location = `${results.user.exam}.html`;}, 2000);
+           // setTimeout(() => {window.location = `${results.user.exam}.html`;}, 2000);
         }else {
             message.style.color = 'red';
             message.innerText = (results.message || results.erreur || 'Une erreur est survenue');
