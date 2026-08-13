@@ -34,7 +34,7 @@ form.addEventListener('submit', async (e) => {
         <h3>${epreuve.matiere}</h3><br>
          <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="200%"></iframe>
          <button onclick="download('${epreuve.fichier_url}', '${epreuve.matiere}')">Télécharger</button>
-        <script>
+        <div><script>
   atOptions = {
     'key' : 'a20c788f60a9012f0728d80f344c173a',
     'format' : 'iframe',
@@ -43,7 +43,7 @@ form.addEventListener('submit', async (e) => {
     'params' : {}
   };
 </script>
-<script src="https://www.highperformanceformat.com/a20c788f60a9012f0728d80f344c173a/invoke.js"></script>
+<script src="https://www.highperformanceformat.com/a20c788f60a9012f0728d80f344c173a/invoke.js"></script></div>
 
         `;
             });
