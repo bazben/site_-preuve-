@@ -54,7 +54,6 @@ form.addEventListener('submit', async (e) => {
                document.getElementById('pub-${i}').innerHTML = adds;
            }, 50);
             });
-            });
     }catch(err) {
         loader.style.display = 'none';
         console.error(err);
