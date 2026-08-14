@@ -50,7 +50,7 @@ form.addEventListener('submit', async (e) => {
         <div id="pub-${i}"></div>
         `;
            
-           
+           console.log("voici i", i);
                document.getElementById('pub-${i}').innerHTML = adds;
            
             });
