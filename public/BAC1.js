@@ -50,9 +50,9 @@ form.addEventListener('submit', async (e) => {
         <div id="pub-${i}"></div>
         `;
            
-           setTimeout(() => {
+           
                document.getElementById('pub-${i}').innerHTML = adds;
-           }, 500);
+           
             });
     }catch(err) {
         loader.style.display = 'none';
