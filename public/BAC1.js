@@ -52,7 +52,7 @@ form.addEventListener('submit', async (e) => {
            
            setTimeout(() => {
                document.getElementById('pub-${i}').innerHTML = adds;
-           }, 50);
+           }, 500);
             });
     }catch(err) {
         loader.style.display = 'none';
