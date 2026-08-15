@@ -13,6 +13,10 @@ form.addEventListener('submit', async (e) => {
     const annee = document.getElementById('annee').value;
     
     loader.style.display = 'flex';
+
+    function ok() {
+                 document.getElementById('ess');
+             }
     
     try {
         const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves/BAC?serie=${serie}&annee=${annee}&exam=BAC1`);
@@ -28,31 +32,15 @@ form.addEventListener('submit', async (e) => {
             return;
         }
         loader.style.display = 'none';
-
- const adds = ` <script>
-  atOptions = {
-    'key' : 'a20c788f60a9012f0728d80f344c173a',
-    'format' : 'iframe',
-    'height' : 60,
-    'width' : 468,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/a20c788f60a9012f0728d80f344c173a/invoke.js"></script>`;
         
        div.innerHTML ='';
-         data.forEach((epreuve, i) => {
+         data.forEach((epreuve) => {
         div.innerHTML += `
         <h3>${epreuve.matiere}</h3><br>
          <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="200%"></iframe>
          <button onclick="download('${epreuve.fichier_url}', '${epreuve.matiere}')">Télécharger</button>
-        
-        <div id="pub-${i}"></div>
         `;
-           
-           console.log("voici i", i);
-               document.getElementById('pub-${i}').innerHTML = adds;
-           
+           ok();
             });
     }catch(err) {
         loader.style.display = 'none';
