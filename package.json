@@ -13,6 +13,8 @@
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.2.0",
     "express": "^5.2.1",
     "mysql2": "^3.22.5",
     "bcryptjs": "^3.0.3",
