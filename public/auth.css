@@ -7,7 +7,7 @@
 }
 
 #auth {
-    position: fixed;
+    position: absolute;
     right: 1px;
     margin-bottom: 5px;
     z-index: 999;
@@ -25,6 +25,7 @@
     box-shadow: 0 0 100px skyblue;
     filter: drop-shadow(0 0 10px);
     color: skyblue;
+	background-color: black;
 }
 #cont {
     background: linear-gradient(blue, #f8c5e9);
