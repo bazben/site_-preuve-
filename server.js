@@ -163,7 +163,7 @@ async function scraper() {
     const $ = cheerio.load(data);
     let news = [];
     
-    $('.p-wrap p-grid p-grid-1').each((i, el) => {
+    $('.p-wrap.p-grid.p-grid-1').each((i, el) => {
        const img = $(el).find('.p-flink img').attr('src');
         
         const title = $(el).find('h2 a').text().trim();
