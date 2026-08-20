@@ -79,3 +79,21 @@ mark {
     position: fixed;
     bottom: 0;
 }
+
+.news {
+    width: 10rem;
+    display: flex;
+}
+.mag {
+    width: 10rem
+}
+.aa {
+    text-decoration: none;
+    color: skyblue
+}
+
+#news {
+    display: flex;
+   flex-wrap: wrap;
+    gap: 15px;
+}
