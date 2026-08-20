@@ -6,6 +6,8 @@ const db = require('./db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieparser = require('cookie-parser');
+const cheerio = require('cheerio');
+const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -149,6 +151,40 @@ app.get('/me', (req,res) => {
                res.json({user: result[0]});
            });
         
+    });
+});
+
+async function scraper() {
+    try{
+    const { data } = await axios.get('https://togobreakingnews.info/category/education/', {
+        headers: { 'User-Agent': 'Mozilla/5.0' }
+    });
+    
+    const $ = cheerio.load(data);
+    let news = [];
+    
+    $('.p-wrap p-grid p-grid-1').each((i, el) => {
+       const img = $(el).find('.p-flink img').attr('src');
+        
+        const title = $(el).find('h2 a').text().trim();
+        const link = $(el).find('h2 a').attr('href');
+        
+        if(title) {
+            news.push({id: i + 1, title, link, img});
+        }
+    });
+    return news;
+    } catch(err) {
+        console.log("Erreur de scraping: ", err);
+    }
+}
+
+app.get('/news', async (req, res) => {
+    const news = await scraper();
+    
+    res.json({
+       total: news.length,
+        data: news
     });
 });
 
