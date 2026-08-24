@@ -33,6 +33,7 @@ form.addEventListener('submit', async (e) => {
        div.innerHTML ='';
 
 const ess = document.getElementById('ess');
+         const copy = ess.cloneNode(true);
         
          data.forEach((epreuve) => {
         div.innerHTML += `
@@ -40,7 +41,8 @@ const ess = document.getElementById('ess');
          <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="200%"></iframe>
          <button onclick="download('${epreuve.fichier_url}', '${epreuve.matiere}')">Télécharger</button>
         `;
-           document.createElement('div').appendChild(ess);
+            document.createElement('div').appendChild(copy);
+             
             });
     }catch(err) {
         loader.style.display = 'none';
