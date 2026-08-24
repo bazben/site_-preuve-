@@ -14,11 +14,7 @@ form.addEventListener('submit', async (e) => {
     const annee = document.getElementById('annee').value;
     
     loader.style.display = 'flex';
-
-    function ok() {
-                 document.getElementById('ess');
-             }
-    
+   
     try {
         const res = await fetch(`https://bazben-site-preuve.onrender.com/epreuves/BAC?serie=${serie}&annee=${annee}&exam=BAC1`);
         if (!res.ok) {
@@ -35,13 +31,16 @@ form.addEventListener('submit', async (e) => {
         loader.style.display = 'none';
         
        div.innerHTML ='';
+
+const ess = document.getElementById('ess');
+        
          data.forEach((epreuve) => {
         div.innerHTML += `
         <h3>${epreuve.matiere}</h3><br>
          <iframe src="https://docs.google.com/gview?url=${encodeURIComponent(epreuve.fichier_url)}&embedded=true" width="100%" height="200%"></iframe>
          <button onclick="download('${epreuve.fichier_url}', '${epreuve.matiere}')">Télécharger</button>
         `;
-           ok();
+           document.createElement('div').appendChild(ess);
             });
     }catch(err) {
         loader.style.display = 'none';
