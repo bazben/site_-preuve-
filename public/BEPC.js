@@ -9,6 +9,7 @@ const loader = document.getElementById('hamster');
 
 form.addEventListener('submit', async (e) => {
    e.preventDefault();
+     div.innerHTML ='';
     const annee = document.getElementById("annee").value;
     
     loader.style.display = 'flex';
