@@ -53,6 +53,11 @@ app.get('/epreuves/BEPC/', (req,res) => {
     });
 });
 
+app.get('/t', (req, res) =>{
+    const rest = db.query('SELECT matiere, fichier_url, exam, serie, annee FROM epreuves');
+    res.json(rest);
+});
+
 app.post('/register', async (req, res) => {
    const { nom, prenom, email, password, confpassword, serie, examen } = req.body;
     if (!email || !password) {
