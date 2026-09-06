@@ -40,7 +40,7 @@ nav .ul {
     display: flex;
     justify-content: space-around;
 }
-nav .ul button {
+nav .ul a {
     background-color: skyblue;
     height: 2.5rem;
     width: 6rem;
@@ -48,7 +48,7 @@ nav .ul button {
     color: currentColor;
     border: hidden;
 }
-nav .ul button:hover {
+nav .ul a:hover {
     border: aquamarine;
     border-radius: 0 0 50%;  
     transition: 0.3s ease-in;
