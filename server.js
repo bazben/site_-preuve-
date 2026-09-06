@@ -24,6 +24,18 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/bac1', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'BAC1.html'));
+});
+
+app.get('/bac2', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'BAC2.html'));
+});
+
+app.get('/bepc', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'BEPC.html'));
+});
+
 app.get('/epreuves/BAC/', (req,res) => {
      const {serie, annee, exam} = req.query;
     if(!serie || !annee) {
