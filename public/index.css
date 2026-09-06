@@ -42,11 +42,12 @@ nav .ul {
 }
 nav .ul a {
     background-color: skyblue;
-    height: 2.5rem;
-    width: 6rem;
+    height: 2rem;
+    width: 5rem;
     font-family: elephant;
     color: currentColor;
     border: hidden;
+    text-decoration: none;
 }
 nav .ul a:hover {
     border: aquamarine;
