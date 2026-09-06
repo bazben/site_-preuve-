@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
+async function cc() {
    const auth = document.getElementById('auth');
     
     try {
@@ -54,4 +54,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         </a>
         `;
     }
-});
+}
+
+cc();
