@@ -6,6 +6,19 @@
     box-shadow: 0 0 20px gray;
 }
 
+.home {
+  text-decoration: none;
+  background-color: lightblue;
+  color: black;
+  font-size: 27px;
+  border-radius: 5px;
+   box-shadow: 5px 7px 10px skyblue;
+}
+
+.home:hover {
+  animation: bg 0.4s ease-in-out forwards;
+}
+
 #auth {
     position: absolute;
     right: 1px;
@@ -72,13 +85,13 @@
 select {
   border-radius: 10px;
   background-color: lightcyan;
-  box-shadow: 5px 7px gray;
+  box-shadow: 5px 7px 5px gray;
 }
 
 .bth {
   border-radius: 10px 7px 38%;
    background-color: lightcyan;
-  box-shadow: 5px 7px gray;
+  box-shadow: 5px 7px 5px gray;
 }
 
 
