@@ -72,13 +72,13 @@
 select {
   border-radius: 10px;
   background-color: lightcyan;
-  box-shadow: 5px 10px gray;
+  box-shadow: 5px 7px gray;
 }
 
 .bth {
   border-radius: 10px 7px 38%;
    background-color: lightcyan;
-  box-shadow: 5px 10px gray;
+  box-shadow: 5px 7px gray;
 }
 
 
