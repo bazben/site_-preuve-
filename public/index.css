@@ -139,4 +139,6 @@ mark {
    flex-wrap: wrap;
     gap: 15px;
     margin: 10px auto;
+    justify-content: center;
+    align-items: center
 }
