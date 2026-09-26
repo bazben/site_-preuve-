@@ -173,7 +173,32 @@ app.get('/me', (req,res) => {
     });
 });
 
-async function scraper() {
+async function scraper1() {
+    try{
+        const { data } = await axios.get('https://www.republiquetogolaise.tg/education', {
+        headers: { 'User-Agent': 'Mozilla/5.0' } 
+    });
+    
+    const $ = cheerio.load(data);
+    let news = [];
+    
+    $('.clearornot1.itemContainer').each((i, el) => {
+         const img = $(el).find('.catItemImage img').attr('src');
+        
+        const title = $(el).find('.catItemImage a').attr('title');
+        const link = $(el).find('.catItemImage a').attr('href');
+        
+        if(title) {
+            news.push({id: 3*i + 1, title, link, img});
+        }
+    });
+        return news;
+    }catch(err) {
+        console.log("Erreur de scraping1: ", err);
+    }
+}
+
+async function scraper2() {
     try{
     const { data } = await axios.get('https://togobreakingnews.info/category/education/', {
         headers: { 'User-Agent': 'Mozilla/5.0' }
@@ -181,15 +206,6 @@ async function scraper() {
     
     const $ = cheerio.load(data);
     let news = [];
-
-         $('.p-wrap.p-overlay.p-overlay-flex').each((i, el) => {
-           const img = $(el).find('.featured-img.wp-post-image').attr('src'); 
-            const title = $(el).find('.p-flink').attr('title');
-            const link = $(el).find('.p-flink').attr('href');
-            
-            news.push({id: 2*i + 1, title, link, img});
-
-        });
     
     $('.p-wrap.p-grid.p-grid-1').each((i, el) => {
        const img = $(el).find('.p-flink img').attr('src');
@@ -201,19 +217,28 @@ async function scraper() {
             news.push({id: i + 1, title, link, img});
         }
     });
-       
+        $('.p-wrap.p-overlay.p-overlay-flex').each((i, el) => {
+           const img = $(el).find('.featured-img.wp-post-image').attr('src'); 
+            const title = $(el).find('.p-flink').attr('title');
+            const link = $(el).find('.p-flink').attr('href');
+            
+            if(title) {
+            news.push({id: 2*i + 1, title, link, img});
+        }
+        });
     return news;
     } catch(err) {
-        console.log("Erreur de scraping: ", err);
+        console.log("Erreur de scraping2: ", err);
     }
 }
 
 app.get('/news', async (req, res) => {
-    const news = await scraper();
+    const news1 = await scraper1();
+    const news2 = await scraper2();
     
     res.json({
-       total: news.length,
-        data: news
+       total: news2.length + news1.length,
+        data: { news1, news2 }
     });
 });
 
