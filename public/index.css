@@ -88,6 +88,16 @@ p {
     }
 }
 
+@media(min-width: 1000px) {
+    .dp {
+        display: flex;
+        height: 250px;
+        margin-bottom: 100px;
+        gap: 90px;
+    }
+    
+}
+
 .dp a {
     display: inline-flex;
     height: 100%;
