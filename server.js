@@ -197,9 +197,8 @@ async function scraper() {
             const title = $(el).find('p-flink').attr('title');
             const link = $(el).find('p-flink').attr('href');
             
-            if(title) {
             news.push({id: i + 1, title, link, img});
-        }
+
         });
     return news;
     } catch(err) {
