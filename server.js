@@ -183,15 +183,18 @@ async function scraper1() {
     let news = [];
     
     $('.clearornot1.itemContainer').each((i, el) => {
-         const img = $(el).find('.catItemImage img').attr('src');
+        const im = $(el).find('.catItemImage img').attr('src');
+         const img = 'https://www.republiquetogolaise.tg/' + im;
         
         const title = $(el).find('.catItemImage a').attr('title');
-        const link = $(el).find('.catItemImage a').attr('href');
+        const l = $(el).find('.catItemImage a').attr('href');
+        const link = 'https://www.republiquetogolaise.tg/' + l;
         
         if(title) {
             news.push({id: 3*i + 1, title, link, img});
         }
     });
+        
         return news;
     }catch(err) {
         console.log("Erreur de scraping1: ", err);
