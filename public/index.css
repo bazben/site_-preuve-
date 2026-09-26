@@ -80,7 +80,8 @@ p {
 @media(min-width: 768px) {
     .dp {
         display: flex;
-        height: 250px
+        height: 250px;
+        margin-bottom: 100px;
     }
 }
 
