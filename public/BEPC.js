@@ -1,8 +1,3 @@
-document.getElementById('home').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location = "index.html";
-});
-
 const form = document.getElementById("form");
 const div = document.getElementById("div");
 const loader = document.getElementById('hamster');
