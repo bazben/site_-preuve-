@@ -235,7 +235,7 @@ async function scraper2() {
 app.get('/news', async (req, res) => {
     const news1 = await scraper1();
     const news2 = await scraper2();
-   const news = news1.content + news2.content;
+   const news = news1.content() + news2.content();
     res.json({
        total: news2.length + news1.length,
         data: news 
