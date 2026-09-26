@@ -194,10 +194,10 @@ async function scraper() {
     });
         $('.p-wrap.p-overlay.p-overlay-flex').each((i, el) => {
            const img = $(el).find('.featured-img.wp-post-image').attr('src'); 
-            const title = $(el).find('p-flink').attr('title');
-            const link = $(el).find('p-flink').attr('href');
+            const title = $(el).find('.p-flink').attr('title');
+            const link = $(el).find('.p-flink').attr('href');
             
-            news.push({id: i + 1, title, link, img});
+            news.push({id: 2i + 1, title, link, img});
 
         });
     return news;
