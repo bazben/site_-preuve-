@@ -182,7 +182,7 @@ async function scraper1() {
     const $ = cheerio.load(data);
     let news = [];
     
-    $('.clearornot1.itemContainer').each((i, el) => {
+    $('.itemContainer').each((i, el) => {
         const im = $(el).find('.catItemImage img').attr('src');
          const img = 'https://www.republiquetogolaise.tg/' + im;
         
