@@ -1,3 +1,25 @@
+const brmenu = document.getElementById('brmenu');
+const btbut = document.getElementById('brbut');
+
+
+
+btbut.addEventListener('click', (e) => {
+   if(brmenu.style.display == 'none') {
+      brmenu.style.display = 'grid';
+       btbut.style.left ='150px';
+      brmenu.style.transition = '0.3s';
+   }else {
+      brmenu.style.display = 'none';
+    btbut.style.left = 0;  
+      brmenu.style.transition = '0.3s';
+   }
+});
+if(brmenu.style.display == 'none') {
+   btbut.style.left = 0;
+}
+
+
+
 
 const g_div = document.getElementById('news');
 async function news() {
