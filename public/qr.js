@@ -48,7 +48,10 @@ function demarrer() {
         document.getElementById('result').innerText = text;
            scanner.stop();
         }
-    );
+    )
+    .catch(function(err) {
+       console.log(err); 
+    });
 }
 
 document.getElementById('fichier').addEventListener('change',
