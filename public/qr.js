@@ -67,3 +67,12 @@ document.getElementById('fichier').addEventListener('change',
     });
 }
                                                    );
+
+function register() {
+    const qr = document.querySelector('#qrcode img');
+    let url = qr.src;
+    const lien = document.createElement('a');
+    lien.href = url;
+    lien.download = 'qrcode.png';
+    lien.click();
+}
