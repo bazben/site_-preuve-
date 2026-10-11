@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur QR Code en Ligne</title>
+    
+    <!-- 1. C'est ici que la magie opère via Internet (Lien direct vers le script brut) -->
+    <!-- 1. La vraie librairie QR Code -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #eef2f3;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .qr-box {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            width: 340px;
+        }
+        h2 { color: #333; margin-bottom: 5px; }
+        p { color: #777; font-size: 14px; margin-top: 0; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        input:focus { border-color: #4a90e2; outline: none; }
+        button {
+            width: 100%;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        button:hover { background-color: #357abd; }
+        #qrcode {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+        section{
+            background-color: rgba(74, 144, 226, 0.2);
+            display: grid;
+            justify-content: center;
+            align-items: flex-end;
+            height: 70%;
+            border-radius: 10px
+        }
+        .bascul {
+            width: 50%;
+            background-color: rgba(74, 144, 226, 0.3);
+        }
+    </style>
+</head>
+<body>
+<section id="sec1">
+<div class="qr-box">
+    <h2>Générateur QR Code</h2>
+    <p>Entrez just le text à convertir</p>
+    
+    <input type="text" id="user-input" placeholder="Collez votre lien URL ici...">
+    <button onclick="creerLeQR()">Générer le Code</button>
+    
+    <!-- Zone où l'image du QR code va apparaître -->
+    <div id="qrcode"></div>
+</div>    
+    <button class="bascul" id="bt1">Scanner</button>
+</section>
+    <section id="sec2" style="display: none">
+    <div class="qr-box">
+        <h2>Scanner QR Code</h2>
+        <div id="reader"></div>
+        <div id="result"></div>
+        <input type="file" accept="image/*" id="fichier">
+        <button onclick="demarrer()">scanner</button>
+    </div>
+        <button class="bascul" id="bt2">Générer</button>
+    </section>
+
+
+<script src="qr.js"></script>
+
+</body>
+</html>
