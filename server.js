@@ -36,6 +36,10 @@ app.get('/bepc', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'BEPC.html'));
 });
 
+app.get('qr_code', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'qr.html'));
+});
+
 app.get('/epreuves/BAC/', (req,res) => {
      const {serie, annee, exam} = req.query;
     if(!serie || !annee) {
