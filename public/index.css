@@ -19,6 +19,68 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     padding: 0;
 }
 
+.brmenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+    max-width: 150px;
+    background-color: rgb(135, 206, 235, 0.5);
+    display: grid;
+    padding-top: 20%;
+    backdrop-filter: blur(4px);
+    border-right: solid skyblue;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 1000;
+    margin: 0;
+    transition: 0.3s
+}
+.brmenu a {
+    width: 65%;
+    height: 30%;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(135, 206, 235, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: clip;
+    border-top: solid skyblue;
+    
+}
+
+.brbut{
+    width: 20%;
+    height: 3rem;
+     background-color: rgb(135, 206, 235, 0.2);
+    color: white;
+    font-size: 300%;
+    backdrop-filter: blur(4px);
+    border: none;
+    border-right: solid skyblue;
+    border-radius: 7px;
+    position: fixed;
+    top: 5%;
+    left: 45%;
+     z-index: 10000;
+    transition: 0.3s
+}
+
+@media (min-width: 650px) {
+    .brmenu {
+        padding-top: 5%;
+    }
+    .brbut {
+        width: 5%;
+        left: 150px;
+        top: 5%;
+       
+    }
+}
+
 .nav {
    top: fixed;
     right: 0;
