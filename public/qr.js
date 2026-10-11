@@ -36,7 +36,7 @@ let instanceQR = null;
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
         });
-        setTimeout(function(){document.getElementById('telecharger').style.display = 'flex';}, 2000);
+        setTimeout(function(){document.getElementById('telecharger').style.display = 'flex';}, 1000);
     }
 
 let scanner = new Html5Qrcode('reader');
@@ -74,6 +74,8 @@ function register() {
     let url = qr.src;
     const lien = document.createElement('a');
     lien.href = url;
-    lien.download = 'qrcode.png';
+    const nom = prompt("entrez le nom du fichier");
+    if(!nom) return;
+    lien.download = nom + '.png';
     lien.click();
 }
