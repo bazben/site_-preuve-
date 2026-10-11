@@ -36,6 +36,7 @@ let instanceQR = null;
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
         });
+        setTimeout(function(){document.getElementById('telecharger').style.display = 'flex';}, 2000);
     }
 
 let scanner = new Html5Qrcode('reader');
