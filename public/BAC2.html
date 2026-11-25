@@ -31,24 +31,36 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                 border: ridge black;
             }
             form {
-               background-color: skyblue;
+                margin: 10px auto;
+                background-color: rgb(135, 206, 235, 0.3);
                 width: 20rem;
                 height: 15rem;
-                color: black;
+                color: skyblue;
                 text-align: center;
-                box-shadow: 0 0 20px skyblue;
-                margin: 10px auto;
-              transform: translate(-50% -50%);
+                backdrop-filter: blur(2px);
+                border-radius: 10px;
+                border-right: solid skyblue;
+                border-bottom: solid skyblue;
             }
             form select {
-                width: 8rem;
+                 width: 8rem;
                 height: 2.5rem;
              text-align: center;
                 margin-bottom: 2rem;
+                color: skyblue;
+                background-color: rgb(135, 206, 235, 0.2);
+                border: none;
+                border-radius: 10px 5%;
+                box-shadow: 10px 10px 20px
+                
             }
             form button {
                 width: 7rem;
                 height: 1.8rem;
+                color: skyblue;
+                background-color: rgb(135, 206, 235, 0.2);
+                border: none;
+                box-shadow: 10px 10px 20px
             }
             
              #home {
@@ -70,16 +82,16 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             }
 
             .sc {
-    display: flex;
+   display: flex;
     align-items: center;
 }
         </style>
     </head>
     <body>
         <header>
+            <div style="position: fixed; top: 0; right: 0; left: 0; height: 8%; width: 100%; backdrop-filter: blur(2px)"><a href="https://bazben-site-preuve.onrender.com/" class="home">🏡Home</a></div>
         <div id="auth"></div>
         </header>
-        <a href="https://bazben-site-preuve.onrender.com/" class="home">🏡Home</a>
 		 <h1 style="margin: 10px auto">sujets de BAC2</h1>
 <form id="search">
      <h3>Remplissez ce formulaire</h3>
